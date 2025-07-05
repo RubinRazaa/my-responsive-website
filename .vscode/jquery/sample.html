@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <button id="btn">CLICK</button>
+    <div style="width: 300px; height:300px; background: green;" id="box"></div>
+    <input type="text" id="inp">
+    <label id="error" style="display: none;">Enter minimum characters</label>
+    <script>
+        $(document).ready(function () {
+            $("#btn").click(function () {
+                // alert("OK")
+                $("#box").fadeToggle(3000)
+
+            })
+            $("#btn").mouseenter(function () {
+                $(this).css({ "background": "green" })
+            })
+            $("#btn").mouseleave(function () {
+                $(this).css({ "background": "white" })
+            })
+            $("#inp").blur(function () {
+                var text = $(this).val()
+                if (text.length < 4) {
+                    // alert("Error")
+                    $("error").show()
+                }else{
+                    $("$error").hide()
+                }
+            })
+
+
+        })
+
+    </script>
+</body>
+
+</html>

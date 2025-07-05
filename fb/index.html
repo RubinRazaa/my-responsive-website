@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Facebook</title>
+    <meta name="description" content="Login to Facebook to connect with friends and the world around you.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="page.css" type="text/css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="main">
+            <h1 class="logo">facebook</h1>
+            <div class="loginbox">
+                <h2>Log in to facebook</h2>
+                <form id="MyForm">
+                    <input type="text" placeholder="Email or Phone" name="emailID" >
+                    <input type="text" placeholder="Password" name="passwordreg">
+                    <Button>Login</Button>
+                </form>
+                <a href="forgottenaccount.html">forgotten account?</a>
+                <a href="fbsignup.html">signup for facebook
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+        <script>
+            $("#MyForm").validate({
+                rules: {
+                    emailID: {
+                        required: true,
+                        email: true
+                    }
+                }
+            })
+
+            $.validator.addMethod("pwcheck", function (value) {
+                return /^[A-Za-z0-9\d=!\-@._*]*$/.test(value) && /[a-z]/.test(value) && /\d/.test(value) && /[A-Z]/.test(value);
+            });
+        </script>
+
+
+</body>
+
+</html>
